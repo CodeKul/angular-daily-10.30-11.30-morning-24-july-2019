@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <p class="alert alert-info" [attr.role]="'alert'">Interpolation {{title}}</p>
+      <p class="alert alert-info">Function {{title.toUpperCase()}}</p>
+      <p class="alert alert-info">Evaluation {{10.5*89}}</p>
+      <input type="{{typ}}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input [type]="typ" >
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input type="text" [style.border]="'1px solid red'">
+      <input type="text" [class.text-muted]="true">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input type="button" value="Okay" (click)="btnClkalvjlkzkxjvlk($event)">
+      <input type="input" value="Okay" (keyup)="keyIsUp($event)">
+    </div>
+  </div>
+</div>
