@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="jumbotron mt-2" *ngIf="isJmb">
+    Attribute directives are used as attributes of elements. The built-in NgStyle directive in the Template Syntax
+    guide, for example, can change several element styles at the same time.
+  </div>
+
+  <ng-template [ngIf]="isJmb">
+    <div class="jumbotron">
+      Attribute directives are used as attributes of elements. The built-in NgStyle directive in the Template Syntax
+      guide, for example, can change several element styles at the same time.
+    </div>
+  </ng-template>
+
+  <div class="row">
+    <div class="col-md-12">
+      <input type="button" class="btn btn-info" value="Okay" (click)="isJmb = !isJmb">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <ul>
+        <li *ngFor="let lang of langs">{{lang}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+
+    </div>
+  </div>
+</div>
