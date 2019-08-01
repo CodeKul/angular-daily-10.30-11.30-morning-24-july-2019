@@ -19,6 +19,10 @@ export class AppComponent {
     'c'
   ]
 
+  st = {
+    border : '1px solid red'
+  }
+
   clk() {
     this.isJmb = !this.isJmb
   }
