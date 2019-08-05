@@ -1,7 +1,18 @@
 <div class="row">
     <div class="col-md-12">
         <h1 class="text-muted">
-            Dashboard Loaded
+            Dashboard Loaded for user {{usNm}}
         </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <a [routerLink]="['okay']">Okay</a>
+        <a [routerLink]="['good']">Good</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <router-outlet></router-outlet>
     </div>
 </div>

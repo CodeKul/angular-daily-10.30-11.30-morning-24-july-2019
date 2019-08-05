@@ -3,6 +3,6 @@
         <input type="text" #usNm>
         <input type="text" #pass class="ml-2">
         <input type="button" value="Login" class="ml-2 btn btn-info" (click)="onLogin(usNm.value, pass.value)">
-        <a [routerLink]="['dash']">Dashboard</a>
+        <a [routerLink]="['dash','ano']" [queryParams]=" { my : 'vkskjvkls' }">Dashboard</a>
     </div>
 </div>

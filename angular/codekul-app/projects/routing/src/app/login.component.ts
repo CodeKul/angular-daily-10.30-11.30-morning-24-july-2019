@@ -9,13 +9,19 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private router : Router
+    private router: Router
   ) { }
 
   ngOnInit() {
   }
 
   onLogin(usNm: string, pass: string) {
-    this.router.navigate(['dash'])
+    this.router.navigate(
+      ['dash', usNm], {
+        queryParams: {
+          ttl: Date.now()
+        }
+      }
+    )
   }
 }
