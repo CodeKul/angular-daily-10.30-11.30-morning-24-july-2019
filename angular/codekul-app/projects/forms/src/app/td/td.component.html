@@ -1,0 +1,45 @@
+<form class="form-horizontal" (ngSubmit)="frmSub(frm)" #frm="ngForm">
+    <fieldset>
+        <!-- Form Name -->
+        <legend>::: Template Driven Form</legend>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="full_name">Full Name</label>
+            <div class="controls">
+                <input name="flNm" placeholder="Enter your full name" class="input-xlarge"
+                    type="text"
+                    ngModel>
+                <p class="help-block">Error</p>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="email">Email</label>
+            <div class="controls">
+                <input name="email" placeholder="Enter Your Email." class="input-xlarge" type="text" ngModel>
+                <p class="help-block">Error</p>
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="mobile">Mobile No.</label>
+            <div class="controls">
+                <input name="mobile" placeholder="Enter Your Mobile Number" class="input-xlarge"
+                    type="text" ngModel>
+                <p class="help-block">Error</p>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="control-group">
+            <label class="control-label" for="submit"></label>
+            <div class="controls">
+                <input type="submit" class="btn btn-primary" value="Okay">
+            </div>
+        </div>
+
+    </fieldset>
+</form>

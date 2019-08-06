@@ -9,6 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 export class DashComponent implements OnInit {
 
   usNm: string
+  val: any = null
+  
   constructor(
     private actRt: ActivatedRoute
   ) { }
