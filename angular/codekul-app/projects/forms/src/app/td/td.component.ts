@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class TdComponent implements OnInit {
 
+  emRg = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])+"
   constructor() { }
 
   ngOnInit() {

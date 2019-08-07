@@ -1,4 +1,4 @@
-<form class="form-horizontal" >
+<form class="form-horizontal" [formGroup]="fg" (ngSubmit)="onSub()">
     <fieldset>
         <!-- Form Name -->
         <legend>::: Data Driven Form</legend>
@@ -7,9 +7,8 @@
         <div class="control-group">
             <label class="control-label" for="full_name">Full Name</label>
             <div class="controls">
-                <input id="name" name="name" placeholder="Enter your full name" class="input-xlarge"
-                    type="text">
-                <p class="help-block">Error</p>
+                <input formControlName="flNm" placeholder="Enter your full name" class="input-xlarge" type="text">
+                <p *ngIf="!fg.controls.flNm.valid" class="help-block">Error</p>
             </div>
         </div>
 
@@ -17,8 +16,9 @@
         <div class="control-group">
             <label class="control-label" for="email">Email</label>
             <div class="controls">
-                <input id="email" name="email" placeholder="Enter Your Email." class="input-xlarge" type="text">
-                <p class="help-block">Error</p>
+                <input formControlName="email" placeholder="Enter Your Email." class="input-xlarge" type="text">
+                <p *ngIf="fg.controls.email.errors?.required" class="help-block">Error because of required</p>
+                <p *ngIf="fg.controls.email.errors?.email" class="help-block">Error beacuse of email pattern</p>
             </div>
         </div>
 
@@ -26,7 +26,7 @@
         <div class="control-group">
             <label class="control-label" for="mobile">Mobile No.</label>
             <div class="controls">
-                <input id="mobile" name="mobile" placeholder="Enter Your Mobile Number" class="input-xlarge"
+                <input formControlName="mobile" placeholder="Enter Your Mobile Number" class="input-xlarge"
                     type="text">
                 <p class="help-block">Error</p>
             </div>

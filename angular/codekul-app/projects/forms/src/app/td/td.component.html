@@ -9,8 +9,10 @@
             <div class="controls">
                 <input name="flNm" placeholder="Enter your full name" class="input-xlarge"
                     type="text"
-                    ngModel>
-                <p class="help-block">Error</p>
+                    ngModel
+                    required
+                    #flNm="ngModel">
+                <p *ngIf="!flNm.valid" class="help-block">Error</p>
             </div>
         </div>
 
@@ -18,8 +20,14 @@
         <div class="control-group">
             <label class="control-label" for="email">Email</label>
             <div class="controls">
-                <input name="email" placeholder="Enter Your Email." class="input-xlarge" type="text" ngModel>
-                <p class="help-block">Error</p>
+                <input 
+                
+                name="email" placeholder="Enter Your Email." 
+                class="input-xlarge" type="text" ngModel 
+                required 
+                [pattern]="emRg"
+                #email="ngModel">
+                <p *ngIf="!email.valid" class="help-block">Error</p>
             </div>
         </div>
 
@@ -28,8 +36,10 @@
             <label class="control-label" for="mobile">Mobile No.</label>
             <div class="controls">
                 <input name="mobile" placeholder="Enter Your Mobile Number" class="input-xlarge"
-                    type="text" ngModel>
-                <p class="help-block">Error</p>
+                    type="text" ngModel required
+                    #mob="ngModel"
+                    >
+                <p *ngIf="!mob.valid" class="help-block">Error</p>
             </div>
         </div>
 
@@ -37,9 +47,8 @@
         <div class="control-group">
             <label class="control-label" for="submit"></label>
             <div class="controls">
-                <input type="submit" class="btn btn-primary" value="Okay">
+                <input [disabled]="!frm.valid" type="submit" class="btn btn-primary" value="Okay">
             </div>
         </div>
-
     </fieldset>
 </form>
