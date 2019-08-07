@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MyValidator } from './my-validator';
+import { ObsService } from '../obs.service';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-dd',
@@ -9,19 +12,31 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class DdComponent implements OnInit {
 
   fg: FormGroup
+  cnt : number
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private obs: ObsService
   ) { }
 
   ngOnInit() {
     this.fg = this.fb.group({
-      flNm: this.fb.control('', Validators.required),
+      flNm: this.fb.control('', [Validators.required, MyValidator.isStFromA]),
       email: this.fb.control('', Validators.compose([
         Validators.required,
         Validators.email
       ])),
       mobile: this.fb.control('', Validators.required)
     })
+
+    this.obs.sampleObservable().subscribe(
+      num => console.log(num),
+      err => console.log(err),
+      () => console.log(`Completed`)
+    )
+
+    interval(2000).subscribe(
+      tick => this.cnt = tick
+    )
   }
 
   onSub() {

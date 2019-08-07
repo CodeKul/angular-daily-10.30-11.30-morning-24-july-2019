@@ -1,14 +1,15 @@
 <form class="form-horizontal" [formGroup]="fg" (ngSubmit)="onSub()">
     <fieldset>
         <!-- Form Name -->
-        <legend>::: Data Driven Form</legend>
+        <legend>::: Data Driven Form {{cnt}}</legend>
 
         <!-- Text input-->
         <div class="control-group">
             <label class="control-label" for="full_name">Full Name</label>
             <div class="controls">
                 <input formControlName="flNm" placeholder="Enter your full name" class="input-xlarge" type="text">
-                <p *ngIf="!fg.controls.flNm.valid" class="help-block">Error</p>
+                <p *ngIf="fg.controls.flNm.errors?.required" class="help-block">Error beacuse of required</p>
+                <p *ngIf="fg.controls.flNm.errors?.isAFailed" class="help-block">Should start from a or A</p>
             </div>
         </div>
 
